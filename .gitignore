@@ -6,3 +6,4 @@ __pycache__/
 .streamlit/secrets.toml
 data/raw/*.csv
 !data/raw/sample_recipes.csv
+data/processed/*.csv

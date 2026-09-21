@@ -34,7 +34,7 @@ def make_documents(df,limit=None):
                f"Cautions: {', '.join(map(str,cautions)) or 'none listed'}","","Ingredients:",
                *[f"- {x}" for x in ingredients],"","Nutrition:"]
         md={"row_id":int(i),"recipe_name":name[:250],"source":source[:250],"url":url[:1000],
-            "meal_type":str(meals[0]) if meals else "unknown","diet_labels":" | ".join(map(str,diet))[:1000]}
+            "meal_type":" | ".join(map(str,meals))[:500],"diet_labels":" | ".join(map(str,diet))[:1000],"health_labels":" | ".join(map(str,health))[:2000]}
         if cal is not None:
             cps=cal/servings; lines += [f"- Calories, whole recipe: {cal:.2f} kcal",f"- Calories per serving: {cps:.2f} kcal"]
             md["calories_per_serving"]=round(cps,2)

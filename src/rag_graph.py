@@ -5,7 +5,7 @@ from langchain_core.messages import SystemMessage,HumanMessage
 from .config import settings
 from .retriever import retrieve
 from .llm import get_llm
-PROMPT=Path(__file__).resolve().parents[1]/"prompts"/"rag_system_prompt_v1.md"
+PROMPT=Path(__file__).resolve().parents[1]/"prompts"/"rag_system_prompt_v2.md"
 class State(TypedDict,total=False):
     question:str; retrieved:list[Any]; sufficient:bool; answer:str; sources:list[dict]
 def rnode(s): return {"retrieved":retrieve(s["question"])}
